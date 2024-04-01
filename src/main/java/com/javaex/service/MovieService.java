@@ -20,6 +20,7 @@ public class MovieService {
 	@Autowired
 	private MovieDao movieDao;
 
+	/*
 	// DB에 이미지 정보 저장
 	public String exeUpload(MultipartFile file) {
 		System.out.println("MovieService.exeUpload()");
@@ -76,6 +77,7 @@ public class MovieService {
 
 		return saveName;
 	}
+	*/
 
 	// 영화 예매 리스트
 	public List<MovieVo> exeMovieList() {

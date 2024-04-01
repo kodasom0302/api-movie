@@ -14,6 +14,7 @@ public class MovieDao {
 	@Autowired
 	private SqlSession sqlSession;
 
+	/*
 	// DB에 이미지 정보 저장
 	public int movieInsert(MovieVo movieVo) {
 		System.out.println("MovieDao.movieInsert()");
@@ -22,6 +23,7 @@ public class MovieDao {
 
 		return count;
 	}
+	*/
 
 	// 영화 예매 리스트
 	public List<MovieVo> selectMovie() {

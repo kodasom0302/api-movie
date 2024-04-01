@@ -20,6 +20,7 @@ public class MovieController {
 	@Autowired
 	private MovieService movieService;
 
+	/*
 	// DB에 이미지 정보 저장
 	@PostMapping("/api/movie/attach")
 	public JsonResult upload(@RequestParam MultipartFile file, @ModelAttribute MovieVo movieVo) {
@@ -29,6 +30,7 @@ public class MovieController {
 
 		return JsonResult.success(saveName);
 	}
+	*/
 
 	// 영화 예매 리스트
 	@GetMapping("/api/movie/list")
