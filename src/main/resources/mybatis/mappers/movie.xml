@@ -16,7 +16,11 @@
         select  m_no mNo,
 				m_name mName,
 		        m_ticketing mTicketing,
-		        m_remarks mRemarks
+		        m_remarks mRemarks,
+		        filePath,
+		        orgName,
+		        saveName,
+		        fileSize
 		from movie_table
       ]]>
    </select>

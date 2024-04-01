@@ -32,12 +32,12 @@ public class MovieController {
 
 	// 영화 예매 리스트
 	@GetMapping("/api/movie/list")
-	public List<MovieVo> movieList() {
+	public JsonResult movieList() {
 		System.out.println("MovieController.movieList()");
 
 		List<MovieVo> mList = movieService.exeMovieList();
 
-		return mList;
+		return JsonResult.success(mList);
 	}
 
 }
