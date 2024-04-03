@@ -20,13 +20,23 @@ public class MovieService {
 	@Autowired
 	private MovieDao movieDao;
 
+	// 1개 데이터 읽기
+	public MovieVo exeSelectOne(int no) {
+		System.out.println("MovieService.exeSelectOne()");
+
+		MovieVo movieVo = movieDao.movieSelectOne(no);
+
+		return movieVo;
+
+	}
+
 	/*
 	// DB에 이미지 정보 저장
 	public String exeUpload(MultipartFile file) {
 		System.out.println("MovieService.exeUpload()");
 
 		// 파일저장디렉토리
-		String saveDir = "C:\\javaStudy\\upload";
+		String saveDir = "D:\\javaStudy\\upload";
 
 		// (1)파일관련 정보 추출///////////////////////////////////////////////////
 
@@ -86,6 +96,22 @@ public class MovieService {
 		List<MovieVo> mList = movieDao.selectMovie();
 
 		return mList;
+	}
+	// 영화 예매 리스트
+	public List<MovieVo> exeTimeList() {
+		System.out.println("MovieService.exeMovieList()");
+		
+		List<MovieVo> tList = movieDao.selectMovieTime();
+		
+		return tList;
+	}
+
+	// 회원정보수정폼(1명 데이터가져오기)
+	public MovieVo exeMovieCount(int no) {
+		System.out.println("UserService.exeModifyForm()");
+
+		MovieVo movieVo = movieDao.userSelectCount(no);
+		return movieVo;
 	}
 
 }

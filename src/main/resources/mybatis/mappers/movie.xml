@@ -2,29 +2,60 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="movie">
 
-	<!-- 사진 저장 -->
-	<insert id="posterInsert" parameterType="com.javaex.vo.MovieVo">
+	<!-- 사진 저장
+	<insert id="posterInsert" parameterType="MovieVo">
 	      <![CDATA[
 	      	insert into movie_table
 			values(null, null, null, null, null, null, null, #{ filePath }, #{ orgName }, #{ saveName }, #{ fileSize })
 	      ]]>
 	   </insert>
-
-   <!-- 전체 리스트 -->
-   <select id="selectMovieList" resultType="com.javaex.vo.MovieVo">
+ -->
+   <!-- 영화 포스터, 제목 리스트 -->
+   <select id="selectMovieList" resultType="MovieVo">
       <![CDATA[ 
-        select  m_no mNo,
-				m_name mName,
-		        m_ticketing mTicketing,
-		        m_price mPrice,
-		        m_date mDate,
-		        m_accumulated_points mAccumulatedPoints,
-		        m_remarks mRemarks,
+        select  m_no,
 		        filePath,
 		        orgName,
 		        saveName,
-		        fileSize
+		        fileSize,
+		        m_name
 		from movie_table
+      ]]>
+   </select>
+   
+   <!-- 한개 영화 상영시간 리스트 -->
+   <select id="selectTimeOneList" parameterType="MovieVo" resultType="MovieVo">
+      <![CDATA[ 
+        select  m.m_no,
+		        s.s_date
+		from movie_table m
+		join screening_table s
+			on m.m_no=s.m_no
+		where m.m_no=#{m_no}
+      ]]>
+   </select>
+   
+   <!-- 한개 영화 상영시간 리스트 -->
+   <select id="selectTimeList" resultType="MovieVo">
+      <![CDATA[ 
+        select  m.m_no,
+		        s.s_date
+		from movie_table m
+		join screening_table s
+			on m.m_no=s.m_no
+      ]]>
+   </select>
+   
+   <!-- 좌석 count -->
+   <select id="selectMovieCount" parameterType="MovieVo" resultType="MovieVo">
+      <![CDATA[ 
+        select m.m_name,
+		      count(*)
+		from movie_receipt r
+		left join screening_table s on s.s_no = r.s_no
+		left join movie_table m on m.m_no = s.m_no
+		where m.m_no = #{m_no)
+		group by m.m_name having count(*)
       ]]>
    </select>
    
