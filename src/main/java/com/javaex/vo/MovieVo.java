@@ -10,7 +10,6 @@ public class MovieVo {
 	private String saveName;
 	private long fileSize;
 	private String m_remarks;
-	private String m_age;
 	private int m_count;
 	private int s_no;
 	private String s_date;
@@ -27,18 +26,17 @@ public class MovieVo {
 		this.s_date = s_date;
 	}
 
-	public MovieVo(int m_no, String m_name, String filePath, String orgName, String saveName, long fileSize, String m_age) {
+	public MovieVo(int m_no, String m_name, String filePath, String orgName, String saveName, long fileSize) {
 		this.m_no = m_no;
 		this.m_name = m_name;
 		this.filePath = filePath;
 		this.orgName = orgName;
 		this.saveName = saveName;
 		this.fileSize = fileSize;
-		this.m_age = m_age;
 	}
 
 	public MovieVo(int m_no, String m_name, int m_price, String filePath, String orgName, String saveName,
-			long fileSize, String m_remarks, String m_age, int m_count, int s_no, String s_date, int m_r_no, String m_r_date,
+			long fileSize, String m_remarks, int m_count, int s_no, String s_date, int m_r_no, String m_r_date,
 			int m_p_no, String m_s_no) {
 		this.m_no = m_no;
 		this.m_name = m_name;
@@ -48,7 +46,6 @@ public class MovieVo {
 		this.saveName = saveName;
 		this.fileSize = fileSize;
 		this.m_remarks = m_remarks;
-		this.m_age = m_age;
 		this.m_count = m_count;
 		this.s_no = s_no;
 		this.s_date = s_date;
@@ -121,14 +118,6 @@ public class MovieVo {
 	public void setM_remarks(String m_remarks) {
 		this.m_remarks = m_remarks;
 	}
-	
-	public String getM_age() {
-		return m_age;
-	}
-
-	public void setM_age(String m_age) {
-		this.m_age = m_age;
-	}
 
 	public int getM_count() {
 		return m_count;
@@ -190,7 +179,7 @@ public class MovieVo {
 	public String toString() {
 		return "MovieVo [m_no=" + m_no + ", m_name=" + m_name + ", m_price=" + m_price + ", filePath=" + filePath
 				+ ", orgName=" + orgName + ", saveName=" + saveName + ", fileSize=" + fileSize + ", m_remarks="
-				+ m_remarks + ", m_age=" + m_age + ", m_count=" + m_count + ", s_no=" + s_no + ", s_date=" + s_date + ", m_r_no=" + m_r_no
+				+ m_remarks + ", m_count=" + m_count + ", s_no=" + s_no + ", s_date=" + s_date + ", m_r_no=" + m_r_no
 				+ ", m_r_date=" + m_r_date + ", m_p_no=" + m_p_no + ", m_s_no=" + m_s_no + "]";
 	}
 
