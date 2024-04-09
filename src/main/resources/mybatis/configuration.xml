@@ -2,9 +2,11 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		
+		<typeAlias alias="MovieVo" type="com.javaex.vo.MovieVo" />
+		<typeAlias alias="FoodVo" type="com.javaex.vo.FoodVo" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/mappers/movie.xml" />
+		<mapper resource="mybatis/mappers/food.xml" />
 	</mappers>
 </configuration>
